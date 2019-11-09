@@ -1,4 +1,4 @@
-package id.ac.ui.cs.mobileprogramming.aviliani.dailyworkouts;
+package id.ac.ui.cs.mobileprogramming.aviliani.dailyworkouts.viewmodel;
 
 import android.app.Application;
 

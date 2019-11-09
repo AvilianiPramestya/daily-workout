@@ -6,9 +6,8 @@ import android.app.NotificationManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 
-import static id.ac.ui.cs.mobileprogramming.aviliani.dailyworkouts.MainActivity.NOTIFICATION_CHANNEL_ID;
+import static id.ac.ui.cs.mobileprogramming.aviliani.dailyworkouts.View.MainActivity.NOTIFICATION_CHANNEL_ID;
 
 public class Receiver extends BroadcastReceiver {
     public static String NOTIFICATION_ID = "notification-id" ;

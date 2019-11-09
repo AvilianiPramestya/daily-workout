@@ -17,8 +17,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-import id.ac.ui.cs.mobileprogramming.aviliani.dailyworkouts.DailyRoutinesViewModel;
-import id.ac.ui.cs.mobileprogramming.aviliani.dailyworkouts.DietListAdapter;
+import id.ac.ui.cs.mobileprogramming.aviliani.dailyworkouts.viewmodel.DailyRoutinesViewModel;
+import id.ac.ui.cs.mobileprogramming.aviliani.dailyworkouts.adapter.DietListAdapter;
 import id.ac.ui.cs.mobileprogramming.aviliani.dailyworkouts.R;
 import id.ac.ui.cs.mobileprogramming.aviliani.dailyworkouts.entity.DietList;
 

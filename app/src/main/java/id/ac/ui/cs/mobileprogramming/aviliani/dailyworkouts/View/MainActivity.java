@@ -1,4 +1,4 @@
-package id.ac.ui.cs.mobileprogramming.aviliani.dailyworkouts;
+package id.ac.ui.cs.mobileprogramming.aviliani.dailyworkouts.View;
 
 import android.app.AlarmManager;
 import android.app.Notification;
@@ -19,9 +19,8 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.Toast;
 
-import id.ac.ui.cs.mobileprogramming.aviliani.dailyworkouts.View.ListIItemActivity;
-import id.ac.ui.cs.mobileprogramming.aviliani.dailyworkouts.View.SettingProfileActivity;
-import id.ac.ui.cs.mobileprogramming.aviliani.dailyworkouts.View.WorkoutDetailsActivity;
+import id.ac.ui.cs.mobileprogramming.aviliani.dailyworkouts.R;
+import id.ac.ui.cs.mobileprogramming.aviliani.dailyworkouts.Receiver;
 
 
 public class MainActivity extends AppCompatActivity {

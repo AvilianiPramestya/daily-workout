@@ -1,7 +1,5 @@
-package id.ac.ui.cs.mobileprogramming.aviliani.dailyworkouts;
+package id.ac.ui.cs.mobileprogramming.aviliani.dailyworkouts.adapter;
 
-import android.content.Context;
-import android.content.res.Resources;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
+import id.ac.ui.cs.mobileprogramming.aviliani.dailyworkouts.R;
 import id.ac.ui.cs.mobileprogramming.aviliani.dailyworkouts.entity.DietList;
 
 

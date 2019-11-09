@@ -14,7 +14,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-import id.ac.ui.cs.mobileprogramming.aviliani.dailyworkouts.MainActivity;
 import id.ac.ui.cs.mobileprogramming.aviliani.dailyworkouts.R;
 import id.ac.ui.cs.mobileprogramming.aviliani.dailyworkouts.adapter.HIITActivitiesAdapter;
 import id.ac.ui.cs.mobileprogramming.aviliani.dailyworkouts.entity.HIITActivities;

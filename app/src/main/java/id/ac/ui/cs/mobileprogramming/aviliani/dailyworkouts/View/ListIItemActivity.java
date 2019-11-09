@@ -1,25 +1,14 @@
 package id.ac.ui.cs.mobileprogramming.aviliani.dailyworkouts.View;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.List;
-
-import id.ac.ui.cs.mobileprogramming.aviliani.dailyworkouts.DailyRoutinesViewModel;
-import id.ac.ui.cs.mobileprogramming.aviliani.dailyworkouts.DietListAdapter;
-import id.ac.ui.cs.mobileprogramming.aviliani.dailyworkouts.MainActivity;
+import id.ac.ui.cs.mobileprogramming.aviliani.dailyworkouts.viewmodel.DailyRoutinesViewModel;
 import id.ac.ui.cs.mobileprogramming.aviliani.dailyworkouts.R;
-import id.ac.ui.cs.mobileprogramming.aviliani.dailyworkouts.entity.DietList;
 
 public class ListIItemActivity extends MainActivity {
 
