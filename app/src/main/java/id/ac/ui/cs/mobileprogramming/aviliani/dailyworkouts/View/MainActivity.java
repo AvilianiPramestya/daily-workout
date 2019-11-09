@@ -25,13 +25,6 @@ import id.ac.ui.cs.mobileprogramming.aviliani.dailyworkouts.Receiver;
 
 public class MainActivity extends AppCompatActivity {
 
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.fragment_daily_routines);
-//        Toolbar toolbar = findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
-//    }
 
     public static final String NOTIFICATION_CHANNEL_ID = "10001" ;
     private final static String default_notification_channel_id = "default" ;
@@ -63,23 +56,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this, getString(R.string.notify), Toast.LENGTH_SHORT).show();
                 scheduleNotification(getNotification( "It's time to start your daily workout" ) , 600000 ) ;
-//                NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-//                NotificationCompat.Builder notification;
-//                notification = new NotificationCompat.Builder(MainActivity.this);
-//                notification.setSmallIcon(R.drawable.snack);
-//                notification.setContentTitle("Start Workout");
-//                notification.setContentText("It's time to start your daily workout");
-//
-//                CharSequence title = "Title";
-//                CharSequence message = "Message";
-//
-//                Intent intent = new Intent(MainActivity.this, MainActivity.class);
-//
-//                notification.setAutoCancel(true);
-//                PendingIntent pendingIntent = PendingIntent.getActivity(MainActivity.this, 0, intent, 0);
-//
-//                notification.setContentIntent(pendingIntent);
-//                notificationManager.notify(1, notification.build());
             }
         });
 
@@ -118,11 +94,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-//    public void onNextClick(View view) {
-//        Intent intent = new Intent(this, SettingProfileActivity.class);
-//        startActivity(intent);
-//
-//    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

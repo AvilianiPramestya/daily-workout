@@ -50,12 +50,6 @@ public class HIITListItemActivity extends MainActivity {
         adapter.setOnItemClickListener(new HIITActivitiesAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(HIITActivities activities) {
-//                Bundle bundle = new Bundle();
-//                bundle.putString("name", activities.getActivity_name());
-//                bundle.putString("image",  activities.getImage());
-//                bundle.putInt("time", activities.getNumber());
-//                HIITActivitiesActivity act = new HIITActivitiesActivity();
-//                act.setArguments(bundle);
 
                 Intent intent = new Intent(HIITListItemActivity.this, HIITActivitiesActivity.class);
                 intent.putExtra(HIITActivitiesActivity.ACTIVITY_NAME, activities.getActivity_name());

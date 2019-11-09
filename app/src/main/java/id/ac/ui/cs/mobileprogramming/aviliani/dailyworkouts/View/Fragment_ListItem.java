@@ -65,13 +65,6 @@ public class Fragment_ListItem extends Fragment {
                 ft.addToBackStack(null);
                 ft.commit();
 
-//                Intent intent = new Intent(ListIItemActivity.this, DailyDietListActivity.class);
-//                intent.putExtra(DailyDietListActivity.ID_DAY, dietList.getId());
-//                intent.putExtra(DailyDietListActivity.BREAKFAST, dietList.getBreakfast());
-//                intent.putExtra(DailyDietListActivity.SNACK, dietList.getSnack());
-//                intent.putExtra(DailyDietListActivity.LUNCH, dietList.getLunch());
-//                intent.putExtra(DailyDietListActivity.DINNER, dietList.getDinner());
-//                startActivity(intent);
             }
         });
 
@@ -81,11 +74,5 @@ public class Fragment_ListItem extends Fragment {
     }
 
 
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//
-//
-//    }
 
 }

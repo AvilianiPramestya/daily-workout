@@ -1,12 +1,12 @@
 <resources>
     <string name="app_name">Daily Workouts</string>
     <string name="action_settings">Settings</string>
-    <string name="day">Name</string>
+    <string name="day">Day</string>
     <string name="height">Height</string>
     <string name="weight">Weight</string>
     <string name="radio_male">Male</string>
     <string name="radio_female">Female</string>
-    <string name="name">Day</string>
+    <string name="name">Name</string>
     <string name="breakfast">Breakfast</string>
     <string name="snack">Snack</string>
     <string name="lunch">Lunch</string>

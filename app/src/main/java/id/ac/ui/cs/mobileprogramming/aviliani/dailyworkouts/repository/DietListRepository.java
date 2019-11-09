@@ -1,10 +1,8 @@
 package id.ac.ui.cs.mobileprogramming.aviliani.dailyworkouts.repository;
 
 import android.content.Context;
-import android.os.AsyncTask;
 
 import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
 
 import java.util.List;
 
@@ -26,7 +24,6 @@ public class DietListRepository {
 
     private final AppDatabase db;
 
-    private MutableLiveData<Integer> currentDietList = new MutableLiveData<Integer>();
 
     public DietListRepository(Context context) {
         db = AppDatabase.getAppDatabase(context);
@@ -46,41 +43,4 @@ public class DietListRepository {
 
 
 
-    public int[] getIds() {
-        return dietListDao.getAllDays();
-    }
-
-    public MutableLiveData<Integer> getCurrentDietList() {
-        return currentDietList;
-    }
-
-    public void setCurrentDietList(int day) {
-        currentDietList.setValue(day);
-    }
-
-    public LiveData<DietList> getDailyDietList(int day) {
-        return dietListDao.getDailyDietList(day);
-        //        return new GetUsersAsyncTask(day).execute();
-    }
-
-
-
-//    class GetUsersAsyncTask extends AsyncTask<Void, Void, DietList>
-//    {
-//
-//        private int day;
-//
-//        GetUsersAsyncTask(int day) {
-//            this.day = day;
-//        }
-//        @Override
-//        protected DietList doInBackground(Void... url) {
-//            return db.dietListDao().getDailyDietList(day);
-//        }
-//
-//        @Override
-//        protected void onPostExecute(DietList result) {
-//            super.onPostExecute(result);
-//        }
-//    }
 }
