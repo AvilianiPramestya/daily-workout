@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Daily Workouts</string>
+    <string name="atau">atau</string>
+    <string name="breakfast">Sarapan</string>
+    <string name="action_settings">Pengaturan</string>
+    <string name="day">Hari ke</string>
+    <string name="dinner">Makan malam</string>
+    <string name="height">Tinggi</string>
+    <string name="hiit">HIIT</string>
+    <string name="lunch">Makan siang</string>
+    <string name="meal_plan">Daftar rencana makanan</string>
+    <string name="name">Nama</string>
+    <string name="next">Selanjutnya</string>
+    <string name="pause">Berhenti</string>
+    <string name="radio_female">Perempuan</string>
+    <string name="radio_male">Laki-laki</string>
+    <string name="reminder">Ingatkan saya 10 menit lagi</string>
+    <string name="snack">Snack</string>
+    <string name="start">Mulai</string>
+    <string name="start_wo">Mulai Workout</string>
+    <string name="stretching">Full Body Stretching</string>
+    <string name="watch_yt">Tonton video ini untuk mengetahui lebih banyak tentang HIIT</string>
+    <string name="weight">Berat badan</string>
+    <string name="welcome">Selamat datang</string>
+    <string name="welcome_workout">Pilihan workout untukmu</string>
+    <string name="deschiit">HIIT, atau high-intensity interval training adalah teknik latihan dimana kamu akan memberikan keseluruhan, seratus persen usaha melalui exercise yang cepat dan intense, diikuti dengan  istirahat sebentar secara berkala. Latihan tipe ini membuat kerja jantung meningkat dan dapat membunuh banyak lemak dalam waktu yang tidak lama.</string>
+    <string name="opensetting">Ubah profile</string>
+    <string name="updateprofile">Profile berhasil diubah!</string>
+    <string name="notify">Kamu akan menerima notifikasi 10 menit lagi</string>
+</resources>
