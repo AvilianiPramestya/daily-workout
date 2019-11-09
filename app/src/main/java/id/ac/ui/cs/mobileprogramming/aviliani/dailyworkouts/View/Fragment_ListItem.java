@@ -56,7 +56,7 @@ public class Fragment_ListItem extends Fragment {
                 bundle.putString("lunch",  dietList.getLunch());
                 bundle.putString("dinner",  dietList.getDinner());
                 bundle.putInt("id", dietList.getId());
-                DailyDietListActivity act = new DailyDietListActivity();
+                Fragment_DailyDietList act = new Fragment_DailyDietList();
                 act.setArguments(bundle);
 
                 FragmentManager fm = ((AppCompatActivity) container.getContext()).getSupportFragmentManager();

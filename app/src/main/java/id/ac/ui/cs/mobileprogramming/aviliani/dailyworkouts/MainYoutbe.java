@@ -3,29 +3,16 @@ package id.ac.ui.cs.mobileprogramming.aviliani.dailyworkouts;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.android.youtube.player.YouTubeBaseActivity;
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerView;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.constraintlayout.widget.ConstraintLayout;
-
 import android.util.Log;
 import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.animation.AnimationUtils;
 import android.widget.Button;
-import android.widget.Toast;
 
-import id.ac.ui.cs.mobileprogramming.aviliani.dailyworkouts.R;
-import id.ac.ui.cs.mobileprogramming.aviliani.dailyworkouts.View.DailyDietListActivity;
 import id.ac.ui.cs.mobileprogramming.aviliani.dailyworkouts.View.ListIItemActivity;
-import id.ac.ui.cs.mobileprogramming.aviliani.dailyworkouts.YoutubeConfig;
 
 public class MainYoutbe extends YouTubeBaseActivity {
 

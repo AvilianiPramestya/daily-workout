@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment;
 
 import id.ac.ui.cs.mobileprogramming.aviliani.dailyworkouts.R;
 
-public class DailyDietListActivity extends Fragment {
+public class Fragment_DailyDietList extends Fragment {
 
 
     TextView tv_day, tv_breakfast, tv_snack, tv_lunch, tv_dinner;
