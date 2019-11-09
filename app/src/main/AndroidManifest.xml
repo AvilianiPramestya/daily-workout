@@ -58,6 +58,10 @@
             android:name=".View.SettingProfileActivity"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+        <activity
+            android:name=".MainYoutbe"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
         <receiver android:name=".Receiver">
         </receiver>
 

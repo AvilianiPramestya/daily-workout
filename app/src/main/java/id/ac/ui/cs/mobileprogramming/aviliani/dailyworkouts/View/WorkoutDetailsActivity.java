@@ -12,6 +12,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView;
 
+import id.ac.ui.cs.mobileprogramming.aviliani.dailyworkouts.MainYoutbe;
 import id.ac.ui.cs.mobileprogramming.aviliani.dailyworkouts.R;
 
 public class WorkoutDetailsActivity extends AppCompatActivity implements View.OnClickListener {
@@ -47,6 +48,12 @@ public class WorkoutDetailsActivity extends AppCompatActivity implements View.On
 
     }
 
+    public void onYoutubeClick(View view) {
+
+        Intent intent = new Intent(this, MainYoutbe.class);
+        startActivity(intent);
+
+    }
 
     @Override
     public void onClick(View v) {

@@ -28,4 +28,5 @@
     <string name="opensetting">Ubah profile</string>
     <string name="updateprofile">Profile berhasil diubah!</string>
     <string name="notify">Kamu akan menerima notifikasi 10 menit lagi</string>
+    <string name="videos">Putar video lainnya</string>
 </resources>
