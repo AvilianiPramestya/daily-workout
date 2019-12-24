@@ -29,4 +29,6 @@
     <string name="updateprofile">Profile berhasil diubah!</string>
     <string name="notify">Kamu akan menerima notifikasi 10 menit lagi</string>
     <string name="videos">Putar video lainnya</string>
+    <string name="networkDialog">Silahkan aktifkan koneksi internet anda sebelum menekan tombol</string>
+    <string name="noInternet">Tidak ada jaringan internet</string>
 </resources>

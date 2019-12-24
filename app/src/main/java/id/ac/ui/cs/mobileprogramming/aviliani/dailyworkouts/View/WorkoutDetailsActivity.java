@@ -1,7 +1,11 @@
 package id.ac.ui.cs.mobileprogramming.aviliani.dailyworkouts.View;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ImageView;
@@ -50,9 +54,32 @@ public class WorkoutDetailsActivity extends AppCompatActivity implements View.On
 
     public void onYoutubeClick(View view) {
 
-        Intent intent = new Intent(this, MainYoutbe.class);
-        startActivity(intent);
+        if (isConnected()) {
+            Intent intent = new Intent(this, MainYoutbe.class);
+            startActivity(intent);
+        } else {
+            openDialog();
+        }
 
+
+    }
+
+    public boolean isConnected() {
+        boolean connected = false;
+        try {
+            ConnectivityManager cm = (ConnectivityManager)getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+            NetworkInfo nInfo = cm.getActiveNetworkInfo();
+            connected = nInfo != null && nInfo.isAvailable() && nInfo.isConnected();
+            return connected;
+        } catch (Exception e) {
+            Log.e("Connectivity Exception", e.getMessage());
+        }
+        return connected;
+    }
+
+    public void openDialog() {
+        NetworkDialog networkDialog = new NetworkDialog();
+        networkDialog.show(getSupportFragmentManager(), "example");
     }
 
     @Override
