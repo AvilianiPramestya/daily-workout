@@ -32,18 +32,19 @@ public class TimerService extends Service {
             @Override
             public void onFinish() {
                 Log.i(TAG, "Timer finished");
+                stopService(new Intent(getApplicationContext(), TimerService.class));
+
             }
         };
 
         cdt.start();
     }
-
     @Override
     public void onDestroy() {
 
-//        cdt.cancel();
-//        Log.i(TAG, "Timer cancelled");
-//        super.onDestroy();
+        cdt.cancel();
+        Log.i(TAG, "Timer cancelled");
+        super.onDestroy();
     }
 
     @Override
@@ -55,4 +56,6 @@ public class TimerService extends Service {
     public IBinder onBind(Intent arg0) {
         return null;
     }
+
+
 }

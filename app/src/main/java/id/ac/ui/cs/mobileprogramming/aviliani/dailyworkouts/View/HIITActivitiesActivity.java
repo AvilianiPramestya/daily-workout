@@ -1,9 +1,14 @@
 package id.ac.ui.cs.mobileprogramming.aviliani.dailyworkouts.View;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemClock;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
@@ -11,9 +16,11 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -27,20 +34,15 @@ public class HIITActivitiesActivity extends AppCompatActivity implements View.On
     public static final String ACTIVITY_NUMBER = "id.ac.ui.cs.mobileprogramming.aviliani.dailyworkouts.View.ACTIVITY_NUMBER";
     public static final String ACTIVITIY_IMAGE = "id.ac.ui.cs.mobileprogramming.aviliani.dailyworkouts.View.ACTIVITIY_IMAGE";
 
-    TextView tv_title, tv_timer, textView;
+    public static final String TAG = "Timer Service";
+
+    TextView tv_title, textView;
     ImageView tv_image;
-    Button start, pause;
+    Button start, reset;
 
     String name;
     int number;
     int image;
-
-
-    long MillisecondTime, StartTime, TimeBuff, UpdateTime = 0L ;
-
-    Handler handler;
-
-    int Seconds, Minutes, MilliSeconds ;
 
     String[] ListElements = new String[] {  };
 
@@ -56,13 +58,13 @@ public class HIITActivitiesActivity extends AppCompatActivity implements View.On
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+
         tv_title = findViewById(R.id.activity_name);
         tv_image = findViewById(R.id.activity_image);
 
         start = findViewById(R.id.start);
-        pause = findViewById(R.id.pause);
+        reset = findViewById(R.id.pause);
         textView = findViewById(R.id.stopWatch);
-
 
         Intent activityIntent = getIntent();
 
@@ -72,10 +74,9 @@ public class HIITActivitiesActivity extends AppCompatActivity implements View.On
 
         tv_title.setText(name);
         tv_image.setImageResource(image);
+        textView.setText(Integer.toString(number));
         Log.d("HIIT ACTIVITY : ", name);
 
-
-        handler = new Handler() ;
 
         ListElementsArrayList = new ArrayList<String>(Arrays.asList(ListElements));
 
@@ -88,28 +89,70 @@ public class HIITActivitiesActivity extends AppCompatActivity implements View.On
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                StartTime = SystemClock.uptimeMillis();
-                handler.postDelayed(runnable, 0);
+                startService( new Intent(getApplicationContext(), TimerService.class));
+                Log.i(TAG, "Started service");
 
 
             }
         });
 
-        pause.setOnClickListener(new View.OnClickListener() {
+        reset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                TimeBuff += MillisecondTime;
-
-                handler.removeCallbacks(runnable);
-
+                Intent intent = new Intent(getApplicationContext(), TimerService.class);
+                stopService(intent);
+                textView.setText(Integer.toString(number));
 
             }
         });
 
 
+    }
 
+    private BroadcastReceiver br = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            updateGUI(intent);
+        }
+    };
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        registerReceiver(br, new IntentFilter(TimerService.COUNTDOWN_BR));
+        Log.i(TAG, "Registered broacast receiver");
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        unregisterReceiver(br);
+        Log.i(TAG, "Unregistered broacast receiver");
+    }
+
+    @Override
+    public void onStop() {
+        try {
+            unregisterReceiver(br);
+            Log.i(TAG, "onStop method broacast receiver");
+        } catch (Exception e) {
+            // Receiver was probably already stopped in onPause()
+        }
+        super.onStop();
+    }
+    @Override
+    public void onDestroy() {
+        Log.i(TAG, "onDestroy activity but service still running");
+        super.onDestroy();
+    }
+
+    private void updateGUI(Intent intent) {
+        if (intent.getExtras() != null) {
+            long millisUntilFinished = intent.getLongExtra("countdown", 0);
+            Log.i(TAG, "Countdown seconds remaining: " +  millisUntilFinished / 1000);
+            textView.setText(Long.toString(millisUntilFinished/1000));
+        }
     }
 
     @Override
@@ -117,30 +160,6 @@ public class HIITActivitiesActivity extends AppCompatActivity implements View.On
 
     }
 
-    public Runnable runnable = new Runnable() {
-
-        public void run() {
-
-            MillisecondTime = SystemClock.uptimeMillis() - StartTime;
-
-            UpdateTime = TimeBuff + MillisecondTime;
-
-            Seconds = (int) (UpdateTime / 1000);
-
-            Minutes = Seconds / 60;
-
-            Seconds = Seconds % 60;
-
-            MilliSeconds = (int) (UpdateTime % 1000);
-
-            textView.setText("" + Minutes + ":"
-                    + String.format("%02d", Seconds) + ":"
-                    + String.format("%03d", MilliSeconds));
-
-            handler.postDelayed(this, 0);
-        }
-
-    };
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
