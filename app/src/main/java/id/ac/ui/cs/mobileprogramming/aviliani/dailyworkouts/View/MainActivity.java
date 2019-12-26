@@ -13,10 +13,12 @@ import androidx.cardview.widget.CardView;
 import androidx.core.app.NotificationCompat;
 
 import android.os.SystemClock;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import id.ac.ui.cs.mobileprogramming.aviliani.dailyworkouts.R;
@@ -29,8 +31,26 @@ public class MainActivity extends AppCompatActivity {
     public static final String NOTIFICATION_CHANNEL_ID = "10001" ;
     private final static String default_notification_channel_id = "default" ;
 
+    public String[] motivatedWord = new String[]{"A healthy outside starts from the inside",
+    "Love yourself enough to live a healthy lifestyle",
+    "The reason I exercise is for the quality of life I enjoy",
+    "Health is the greatest gift",
+    "The groundwork for all happiness is good health",
+    "Physical fitness is the first requisite of happiness.",
+    "You can’t control what goes on outside, but you can control what goes on inside",
+    "It is health that is the real wealth, and not pieces of gold and silver",
+    "A good laugh and a long sleep are the best cures in the doctor’s book",
+    "I have chosen to be happy because it is good for my health"};
+
+    public native int jniword();
+
+    static {
+        System.loadLibrary("jni_words");
+    }
+
+    TextView tv_workout;
     CardView hiit_card;
-    Button btn_sendMsg, btn_image;
+    Button btn_sendMsg;
 
 
     @Override
@@ -42,7 +62,12 @@ public class MainActivity extends AppCompatActivity {
 
         hiit_card = findViewById(R.id.hiit_card);
         btn_sendMsg = findViewById(R.id.notif_btn);
+        tv_workout = findViewById(R.id.tv_workout);
 
+        tv_workout.setText(motivatedWord[jniword()]);
+
+
+        Log.i("NUMBER FROM JNI: ", Integer.toString(jniword()));
         hiit_card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
